@@ -1,51 +1,49 @@
 package it.polimi.rsp.mock;
 
 import lombok.Getter;
-import org.apache.jena.rdf.model.Property;
-import org.apache.jena.rdf.model.Resource;
-import org.apache.jena.rdf.model.ResourceFactory;
+import org.apache.commons.rdf.api.IRI;
+import org.apache.commons.rdf.api.RDF;
 
 public class VPROV {
+    private static final RDF RDF = RDFFactory.getInstance(RDFImplementation.JENA);
+
     @Getter
     private static final String uri = "http://w3id.org/rsp/vocals-prov#";
 
-    public static final Resource FILTER_OPERATOR = resource("FilterOperator");
-    public static final Resource OPERATOR = resource("Operator");
-    public static final Resource PHYSICAL_WINDOW = resource("PhysicalWindow");
-    public static final Resource R2R_OPERATOR = resource("R2ROperator");
-    public static final Resource R2S_OPERATOR = resource("R2SOperator");
-    public static final Resource RSPQL_OPERATOR = resource("RSPQLOperator");
-    public static final Resource REPLAY = resource("Replay");
-    public static final Resource S2R_OPERATOR = resource("S2ROperator");
-    public static final Resource S2S_OPERATOR = resource("S2SOperator");
-    public static final Resource SET_OPERATOR = resource("SetOperator");
-    public static final Resource STREAMING_AGENT = resource("StreamingAgent");
-    public static final Resource TASK = resource("Task");
-    public static final Resource TIME_BASED_WINDOW = resource("TimeBasedWindow");
-    public static final Resource TRANSFORM_OPERATOR = resource("TransformOperator");
-    public static final Resource WINDOW = resource("Window");
-    public static final Resource WINDOW_OPERATOR = resource("WindowOperator");
+    public static final IRI FILTER_OPERATOR = resource("FilterOperator");
+    public static final IRI OPERATOR = resource("Operator");
+    public static final IRI PHYSICAL_WINDOW = resource("PhysicalWindow");
+    public static final IRI R2R_OPERATOR = resource("R2ROperator");
+    public static final IRI R2S_OPERATOR = resource("R2SOperator");
+    public static final IRI RSPQL_OPERATOR = resource("RSPQLOperator");
+    public static final IRI REPLAY = resource("Replay");
+    public static final IRI S2R_OPERATOR = resource("S2ROperator");
+    public static final IRI S2S_OPERATOR = resource("S2SOperator");
+    public static final IRI SET_OPERATOR = resource("SetOperator");
+    public static final IRI STREAMING_AGENT = resource("StreamingAgent");
+    public static final IRI TASK = resource("Task");
+    public static final IRI TIME_BASED_WINDOW = resource("TimeBasedWindow");
+    public static final IRI TRANSFORM_OPERATOR = resource("TransformOperator");
+    public static final IRI WINDOW = resource("Window");
+    public static final IRI WINDOW_OPERATOR = resource("WindowOperator");
 
-    public static final Property CONTAINED_IN = property("containedIn");
-    public static final Property CONTAINS = property("contains");
-    public static final Property ENDED_AT = property("endedAt");
-    public static final Property FOLLOWED_BY = property("followedBy");
-    public static final Property HAS_OUTPUT = property("hasOutput");
-    public static final Property PERFORMS = property("performs");
-    public static final Property PRECEDED_BY = property("precededBy");
-    public static final Property STARTED_AT = property("startedAt");
-    public static final Property STARTING_TIME = property("startingTime");
+    public static final IRI CONTAINED_IN = resource("containedIn");
+    public static final IRI CONTAINS = resource("contains");
+    public static final IRI ENDED_AT = resource("endedAt");
+    public static final IRI FOLLOWED_BY = resource("followedBy");
+    public static final IRI HAS_OUTPUT = resource("hasOutput");
+    public static final IRI PERFORMS = resource("performs");
+    public static final IRI PRECEDED_BY = resource("precededBy");
+    public static final IRI STARTED_AT = resource("startedAt");
+    public static final IRI STARTING_TIME = resource("startingTime");
 
-    public static final Property QUERY = property("query");
-    public static final Property RANGE = property("range");
-    public static final Property STEP = property("step");
+    public static final IRI QUERY = resource("query");
+    public static final IRI RANGE = resource("range");
+    public static final IRI STEP = resource("step");
 
-    private static Resource resource(String local) {
-        return ResourceFactory.createResource(uri + local);
+    private static IRI resource(String local) {
+        return RDF.createIRI(uri + local);
     }
 
-    private static Property property(String local) {
-        return ResourceFactory.createProperty(uri, local);
-    }
 
 }

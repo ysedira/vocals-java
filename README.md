@@ -1,5 +1,5 @@
 ## Maven
-```xml 
+```xml
 <repositories>
     <repository>
         <id>jitpack.io</id>
@@ -7,7 +7,7 @@
     </repository>
 </repositories>
 ``` 
-```xml 
+```xml
  <dependency>
     <groupId>com.github.ysedira</groupId>
     <artifactId>vocals-jena</artifactId>
